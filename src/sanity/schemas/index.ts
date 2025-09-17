@@ -3,7 +3,7 @@
 // Notes
 // - Uses TypeScript for strong typing.
 // - Designed to mirror the information architecture visible on thebusinessyear.com:
-//   Content Types: Articles, Interviews, Videos, Events, Press / Media, Special Reports, Publications (Issues)
+//   Content Types: Articles, Interviews, Videos, Events, Press / Media, Power Lists, Publications (Issues)
 //   Taxonomies: Sectors, Regions, Years, Tags
 //   Entities: People (Interviewees), Organizations, Authors/Contributors, Partners
 //   Advertising: Ads, Ad Placements, Performance Tracking
@@ -284,7 +284,7 @@ export const press = defineType({
 
 export const powerList = defineType({
   name: 'powerList',
-  title: 'Special Report',
+  title: 'Power List',
   type: 'document',
   fields: [
     ...baseContentFields,
@@ -296,7 +296,7 @@ export const powerList = defineType({
 
 export const powerListCategory = defineType({
   name: 'powerListCategory',
-  title: 'Special Report Category',
+  title: 'Power List Category',
   type: 'document',
   fields: [
     defineField({ name: 'title', type: 'string', validation: r => r.required() }),
