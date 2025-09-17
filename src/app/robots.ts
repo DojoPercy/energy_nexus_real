@@ -15,4 +15,4 @@ export default function robots(): MetadataRoute.Robots {
     },
     sitemap: 'https://energynexusmag.com/sitemap.xml',
   }
-}s
+}
