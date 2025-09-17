@@ -8,7 +8,7 @@ export default defineConfig({
   title: 'Energy Nexus',
 
   projectId: 'zgs7rdoe',
-  dataset: 'production',
+  dataset: 'nexus-production',
   basePath: '/admin',
   apiVersion: '2024-03-18',
   plugins: [

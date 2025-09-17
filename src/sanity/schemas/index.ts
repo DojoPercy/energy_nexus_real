@@ -288,6 +288,7 @@ export const specialReport = defineType({
   type: 'document',
   fields: [
     ...baseContentFields,
+    defineField({name: 'category', type: 'string', options: { list: ['Top HR', 'Profile Features']  }}),
     defineField({ name: 'pdf', type: 'file', options: { accept: 'application/pdf' } }),
     defineField({ name: 'summary', type: 'richBlock' }),
   ]

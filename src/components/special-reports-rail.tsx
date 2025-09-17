@@ -22,7 +22,7 @@ export default async function SpecialReportsRail() {
     <div className="w-full">
       <div className="mb-4 flex items-center justify-between">
       <div className="mb-12">
-          <h2 className="text-4xl font-bold text-brand-blue mb-2">Profile Features</h2>
+          <h2 className="text-4xl font-bold text-brand-blue mb-2">Power List</h2>
           <div className="w-20 h-1 bg-brand-blue"></div>
         </div>
       </div>
