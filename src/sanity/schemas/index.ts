@@ -437,7 +437,7 @@ export default [
   // Entities
   organization, person, author, partner,
   // Content
-  article, interview, video, press, specialReport, publication, event,
+  article, interview, video, press, specialReport, specialReportCategory, publication, event,
   // AI Features
   aiSummary,
   // Advertising
