@@ -288,12 +288,21 @@ export const specialReport = defineType({
   type: 'document',
   fields: [
     ...baseContentFields,
-    defineField({name: 'category', type: 'string', options: { list: ['Top HR', 'Profile Features']  }}),
+    defineField({name: 'category', type: 'reference', to: [{ type: 'specialReportCategory' }], validation: r => r.required()}),
     defineField({ name: 'pdf', type: 'file', options: { accept: 'application/pdf' } }),
     defineField({ name: 'summary', type: 'richBlock' }),
   ]
 })
 
+export const specialReportCategory = defineType({
+  name: 'specialReportCategory',
+  title: 'Special Report Category',
+  type: 'document',
+  fields: [
+    defineField({ name: 'title', type: 'string', validation: r => r.required() }),
+    defineField({ name: 'slug', type: 'slug', options: { source: 'title' }, validation: r => r.required() }),
+  ]
+})
 export const publication = defineType({
   name: 'publication',
   title: 'Publication (Issue)',
