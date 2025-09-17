@@ -13,6 +13,6 @@ export default function robots(): MetadataRoute.Robots {
         '/private/',
       ],
     },
-    sitemap: 'https://theboardroommagazine.com/sitemap.xml',
+    sitemap: 'https://energynexusmag.com/sitemap.xml',
   }
-}
+}s

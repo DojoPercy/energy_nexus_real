@@ -42,14 +42,14 @@ export function generateMetadata(data: SEOData, defaultTitle: string, defaultDes
     title,
     description,
     keywords: 'energy, news, articles, interviews, publications, events, renewable energy, sustainability, finance, MEA, Middle East, Africa',
-    authors: [{ name: 'Finance Focus MEA' }],
-    creator: 'Finance Focus MEA',
-    publisher: 'Finance Focus MEA',
+    authors: [{ name: 'Energy nexus' }],
+    creator: 'Energy nexus',
+    publisher: 'Energy nexus',
     openGraph: {
       title,
       description,
       url: canonicalUrl,
-      siteName: 'Finance Focus MEA',
+      siteName: 'Energy nexus',
       images: [
         {
           url: ogImage,
@@ -89,7 +89,7 @@ export function generateMetadata(data: SEOData, defaultTitle: string, defaultDes
 export function generateHomeMetadata(): Metadata {
   return generateMetadata(
     {},
-    'Finance Focus MEA - Latest Energy News, Articles & Insights',
+    'Energy nexus - Latest Energy News, Articles & Insights',
     'Stay updated with the latest energy news, articles, interviews, and insights from the energy industry. Discover renewable energy trends, sustainability news, and expert analysis.',
     '/'
   )
@@ -98,7 +98,7 @@ export function generateHomeMetadata(): Metadata {
 export function generateArticlesMetadata(seo?: SEOData): Metadata {
   return generateMetadata(
     seo || {},
-    'Articles - Finance Focus MEA',
+    'Articles - Energy nexus',
     'Explore our comprehensive collection of energy articles covering renewable energy, sustainability, industry trends, and expert insights.',
     '/articles'
   )
@@ -107,7 +107,7 @@ export function generateArticlesMetadata(seo?: SEOData): Metadata {
 export function generateArticleMetadata(article: any): Metadata {
   const seo = article.seo || {}
   const title = seo.title || article.title
-  const description = seo.description || article.dek || `Read about ${article.title} on Finance Focus MEA.`
+  const description = seo.description || article.dek || `Read about ${article.title} on Energy nexus.`
   const url = article.slug?.current ? `/articles/${article.slug.current}` : '/articles'
 
   return generateMetadata(
@@ -121,7 +121,7 @@ export function generateArticleMetadata(article: any): Metadata {
 export function generateInterviewsMetadata(seo?: SEOData): Metadata {
   return generateMetadata(
     seo || {},
-    'Interviews - Finance Focus MEA',
+    'Interviews - Energy nexus',
     'Discover exclusive interviews with energy industry leaders, experts, and innovators. Get insights from the people shaping the future of energy.',
     '/interviews'
   )
@@ -145,7 +145,7 @@ export function generateInterviewMetadata(interview: any): Metadata {
 export function generateEventsMetadata(seo?: SEOData): Metadata {
   return generateMetadata(
     seo || {},
-    'Events - Finance Focus MEA',
+    'Events - Energy nexus',
     'Stay informed about upcoming energy events, conferences, summits, and industry gatherings. Find events in your region and sector.',
     '/events'
   )
@@ -168,7 +168,7 @@ export function generateEventMetadata(event: any): Metadata {
 export function generatePublicationsMetadata(seo?: SEOData): Metadata {
   return generateMetadata(
     seo || {},
-    'Publications - Finance Focus MEA',
+    'Publications - Energy nexus',
     'Browse our collection of energy publications, reports, and special issues. Download PDFs and explore comprehensive energy research.',
     '/publications'
   )
@@ -191,7 +191,7 @@ export function generatePublicationMetadata(publication: any): Metadata {
 export function generateVideosMetadata(seo?: SEOData): Metadata {
   return generateMetadata(
     seo || {},
-    'Videos - Finance Focus MEA',
+    'Videos - Energy nexus',
     'Watch energy industry videos, interviews, and insights. Discover expert analysis and industry trends through our video content.',
     '/videos'
   )
@@ -200,7 +200,7 @@ export function generateVideosMetadata(seo?: SEOData): Metadata {
 export function generateVideoMetadata(video: any): Metadata {
   const seo = video.seo || {}
   const title = seo.title || `${video.title} - Video`
-  const description = seo.description || video.description || `Watch ${video.title} on Finance Focus MEA.`
+  const description = seo.description || video.description || `Watch ${video.title} on Energy nexus.`
   const url = video.slug?.current ? `/videos/${video.slug.current}` : '/videos'
 
   return generateMetadata(
@@ -242,8 +242,8 @@ export function generateRegionMetadata(region: any): Metadata {
 export function generateAboutMetadata(): Metadata {
   return generateMetadata(
     {},
-    'About Us - Finance Focus MEA',
-    'Learn about Finance Focus MEA, your trusted source for energy news, insights, and analysis. Discover our mission and commitment to energy journalism.',
+    'About Us - Energy nexus',
+    'Learn about Energy nexus, your trusted source for energy news, insights, and analysis. Discover our mission and commitment to energy journalism.',
     '/about'
   )
 }
@@ -251,8 +251,8 @@ export function generateAboutMetadata(): Metadata {
 export function generateContactMetadata(): Metadata {
   return generateMetadata(
     {},
-    'Contact Us - Finance Focus MEA',
-    'Get in touch with Finance Focus MEA. Contact our team for editorial inquiries, advertising opportunities, or general questions.',
+    'Contact Us - Energy nexus',
+    'Get in touch with Energy nexus. Contact our team for editorial inquiries, advertising opportunities, or general questions.',
     '/contact'
   )
 }
@@ -260,8 +260,8 @@ export function generateContactMetadata(): Metadata {
 export function generateAdvertiseMetadata(): Metadata {
   return generateMetadata(
     {},
-    'Advertise - Finance Focus MEA',
-    'Advertise with Finance Focus MEA and reach energy industry professionals, decision-makers, and stakeholders. Explore our advertising opportunities.',
+    'Advertise - Energy nexus',
+    'Advertise with Energy nexus and reach energy industry professionals, decision-makers, and stakeholders. Explore our advertising opportunities.',
     '/advertise'
   )
 }
@@ -278,15 +278,15 @@ export function generateContractPublishingMetadata(): Metadata {
 export function generateMyAccountMetadata(): Metadata {
   return generateMetadata(
     {},
-    'My Account - Finance Focus MEA',
-    'Manage your Finance Focus MEA account, preferences, and subscriptions.',
+    'My Account - Energy nexus',
+    'Manage your Energy nexus account, preferences, and subscriptions.',
     '/my-account'
   )
 }
 
 export function generateNotFoundMetadata(): Metadata {
   return {
-    title: 'Page Not Found - Finance Focus MEA',
+    title: 'Page Not Found - Energy nexus',
     description: 'The page you are looking for could not be found.',
     robots: {
       index: false,
@@ -297,7 +297,7 @@ export function generateNotFoundMetadata(): Metadata {
 
 export function generateErrorMetadata(): Metadata {
   return {
-    title: 'Error - Finance Focus MEA',
+    title: 'Error - Energy nexus',
     description: 'An error occurred while loading this page.',
     robots: {
       index: false,
