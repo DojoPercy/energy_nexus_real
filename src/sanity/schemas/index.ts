@@ -282,20 +282,20 @@ export const press = defineType({
   ],
 })
 
-export const specialReport = defineType({
-  name: 'specialReport',
+export const powerList = defineType({
+  name: 'powerList',
   title: 'Special Report',
   type: 'document',
   fields: [
     ...baseContentFields,
-    defineField({name: 'category', type: 'reference', to: [{ type: 'specialReportCategory' }], validation: r => r.required()}),
+    defineField({name: 'category', type: 'reference', to: [{ type: 'powerListCategory' }], validation: r => r.required()}),
     defineField({ name: 'pdf', type: 'file', options: { accept: 'application/pdf' } }),
     defineField({ name: 'summary', type: 'richBlock' }),
   ]
 })
 
-export const specialReportCategory = defineType({
-  name: 'specialReportCategory',
+export const powerListCategory = defineType({
+  name: 'powerListCategory',
   title: 'Special Report Category',
   type: 'document',
   fields: [
@@ -401,7 +401,7 @@ export const savedItem = defineType({
         { type: 'event' },
         { type: 'video' },
         { type: 'press' },
-        { type: 'specialReport' },
+        { type: 'powerList' },
         { type: 'publication' },
       ],
       validation: r => r.required(),
@@ -437,7 +437,7 @@ export default [
   // Entities
   organization, person, author, partner,
   // Content
-  article, interview, video, press, specialReport, specialReportCategory, publication, event,
+  article, interview, video, press, powerList, powerListCategory, publication, event,
   // AI Features
   aiSummary,
   // Advertising
