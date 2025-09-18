@@ -21,6 +21,7 @@ export default function PaystackPayment({ email, amount, onSuccess, onClose, chi
     publicKey: PAYSTACK_CONFIG.publicKey,
     email,
     amount: ghsToKobo(amount),
+    currency: 'GHS',
     onSuccess: (reference) => {
       console.log('Payment successful:', reference)
       setIsLoading(false)

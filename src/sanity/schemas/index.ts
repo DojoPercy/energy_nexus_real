@@ -426,6 +426,9 @@ export const savedItem = defineType({
 })
 
 
+// ============================
+// Subscription Plans are defined in access.ts
+
 // =====================
 // Export schema bundle
 // =====================
