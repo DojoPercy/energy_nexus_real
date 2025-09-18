@@ -24,7 +24,7 @@ export async function POST(request: NextRequest) {
       body: JSON.stringify({
         email,
         amount: Math.round(amount), // Ensure amount is in kobo
-        currency,
+        currency: 'GHS',
         reference,
         metadata,
         callback_url: `${process.env.NEXT_PUBLIC_BASE_URL}/checkout/success`,

@@ -9,7 +9,7 @@
 require('dotenv').config({ path: '.env.local' })
 
 const SANITY_PROJECT_ID = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID
-const SANITY_API_TOKEN = process.env.SANITY_API_TOKEN
+const SANITY_API_TOKEN = process.env.SANITY_API_WRITE_TOKEN
 
 if (!SANITY_PROJECT_ID || !SANITY_API_TOKEN) {
   console.error('❌ Sanity configuration not found')
@@ -19,6 +19,9 @@ if (!SANITY_PROJECT_ID || !SANITY_API_TOKEN) {
 
 async function createSanityPlans() {
   console.log('🚀 Creating Sanity subscription plans...')
+  console.log(`📡 Using Sanity Project ID: ${SANITY_PROJECT_ID}`)
+  console.log(`🔑 API Token present: ${SANITY_API_TOKEN ? 'Yes' : 'No'}`)
+  console.log('')
   
   const plans = [
     {
@@ -60,8 +63,8 @@ async function createSanityPlans() {
       ],
       isActive: true,
       isPopular: true,
-      paystackPlanCode: 'PLN_annual_plan_code',
-      paystackPlanId: 'annual_plan_id', 
+      paystackPlanCode: 'PLN_r3ht26zroeus1mv',
+      paystackPlanId: '2897311', 
     }
   ]
 
@@ -69,19 +72,27 @@ async function createSanityPlans() {
   
   for (const plan of plans) {
     try {
+      console.log(`📝 Creating plan: ${plan.name}`)
+      console.log(`   Type: ${plan._type}`)
+      console.log(`   Slug: ${plan.slug.current}`)
+      
+      const requestBody = {
+        mutations: [
+          {
+            create: plan
+          }
+        ]
+      }
+      
+      console.log(`   Request body: ${JSON.stringify(requestBody, null, 2)}`)
+      
       const response = await fetch(`https://${SANITY_PROJECT_ID}.api.sanity.io/v2023-05-03/data/mutate/production`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${SANITY_API_TOKEN}`,
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          mutations: [
-            {
-              create: plan
-            }
-          ]
-        })
+        body: JSON.stringify(requestBody)
       })
 
       if (response.ok) {
@@ -91,11 +102,15 @@ async function createSanityPlans() {
         console.log(`   Slug: ${plan.slug.current}`)
         console.log('')
       } else {
-        const error = await response.json()
-        console.error(`❌ Failed to create plan ${plan.name}:`, error.message)
+        const errorText = await response.text()
+        console.error(`❌ Failed to create plan ${plan.name}:`)
+        console.error(`   Status: ${response.status} ${response.statusText}`)
+        console.error(`   Response: ${errorText}`)
       }
     } catch (error) {
-      console.error(`❌ Error creating plan ${plan.name}:`, error.message)
+      console.error(`❌ Error creating plan ${plan.name}:`)
+      console.error(`   Error: ${error.message || error}`)
+      console.error(`   Stack: ${error.stack}`)
     }
   }
 
